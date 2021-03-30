@@ -1,0 +1,20 @@
+expo install react-native-gesture-handler@~1.6.0 
+expo install react-native-reanimated@~1.7.0
+expo install react-native-screens@~2.2.0 
+expo install react-native-safe-area-context@~0.7.3
+expo install @react-native-community/masked-view@~0.1.6
+
+clave apikey : AIzaSyC5c1_8T0bDwe0vC0MvYcQRkO2H8jnfKu0
+
+Google Certificate Fingerprint:     CA:6F:65:27:09:80:6A:9D:27:0E:06:1A:89:8C:E5:B0:BB:A2:39:59
+Google Certificate Hash (SHA-1):    CA6F652709806A9D270E061A898CE5B0BBA23959
+Google Certificate Hash (SHA-256):  A0544A101FF91BA2E7A01FD4A207F6ED1A136CA0C52D832E7ECA76B93F35103D
+Facebook Key Hash:                  ym9lJwmAap0nDgYaiYzlsLuiOVk=
+
+
+
+webcliente android = 483811688154-nr6hr8hnf8vr6v7e6oi8vc8gqamv21gv.apps.googleusercontent.com
+webcliente 2 android = 483811688154-6i51ian541c4ms8ifttl8suevtufvo9a.apps.googleusercontent.com
+
+web cliente: 483811688154-fnh954qu8ipikvnmtcbk7ilrlsfaknhv.apps.googleusercontent.com
+web secreto cliente : 8B4_rCeasFEFH_Ksq7-bRE9K

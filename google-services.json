@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "483811688154",
+    "firebase_url": "https://medidor-agua-b5a83-default-rtdb.firebaseio.com",
+    "project_id": "medidor-agua-b5a83",
+    "storage_bucket": "medidor-agua-b5a83.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483811688154:android:bbb983e349c75c012cefe3",
+        "android_client_info": {
+          "package_name": "com.seb_snow.MedidorAgua"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "483811688154-nr6hr8hnf8vr6v7e6oi8vc8gqamv21gv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.seb_snow.MedidorAgua",
+            "certificate_hash": "ca6f652709806a9d270e061a898ce5b0bba23959"
+          }
+        },
+        {
+          "client_id": "483811688154-3aef9uup4o8rn8tlccc3pp3an1hm3ep6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5c1_8T0bDwe0vC0MvYcQRkO2H8jnfKu0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "483811688154-3aef9uup4o8rn8tlccc3pp3an1hm3ep6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

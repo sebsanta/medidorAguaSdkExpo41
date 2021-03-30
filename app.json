@@ -23,10 +23,29 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+     
+      "permissions": [
+        "MEDIA_LIBARY",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "CAMERA",
+        "LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyC5c1_8T0bDwe0vC0MvYcQRkO2H8jnfKu0"
+        }
+       
+      },
+      "package": "com.seb_snow.MedidorAgua",
+      "googleServicesFile": "./google-services.json"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Versión completa, falta modificar las rutas guardando el id de la locación. \nFalta mejorar el rating"
   }
 }
