@@ -20,7 +20,7 @@ export default function Locacion(props) {
         LogBox.ignoreLogs(['Animated: `useNativeDriver`']);
         }, [])
     //console.log(props);
-    const { navigation, route , ppm} = props;
+    const { navigation, route , ppm, region} = props;
     const { id, name } = route.params; 
     const [ locacion, setLocacion ] = useState(null);
     const [ rating, setRating ] = useState(0);
@@ -28,6 +28,7 @@ export default function Locacion(props) {
     const [isFavorite, setIsFavorite] = useState(false);
     const [userLogged, setUserLogged] = useState(false);
     const toastRef = useRef();
+  
    
     useEffect(() => {
         navigation.setOptions({title: name});
@@ -113,6 +114,9 @@ export default function Locacion(props) {
           });
     };
 
+    
+    
+
     if(!locacion) return <Loading isVisible={true} text="Cargando..." />;
 
     return (
@@ -133,12 +137,16 @@ export default function Locacion(props) {
                 width={screenWidth}
            />
            <TitleLocacion 
+                region={locacion.region}
                 name={locacion.name}
                 description={locacion.description}
                 rating={rating}
                 ppm={locacion.ppm}
+                createAt={locacion.createAt}
            />
+          
            <LocacionInfo 
+                region={locacion.region}
                 location={locacion.location}
                 name={locacion.name}
                 address={locacion.adress}
@@ -151,14 +159,17 @@ export default function Locacion(props) {
            <Toast ref={toastRef} position="center" opacity={0.9}/>
         </ScrollView>
     );
+    
 }
 
 function TitleLocacion(props){
-    const { name, ppm, description, rating  } = props;
+    const { name, region, ppm, description, rating, createAt } = props;
+    const createReview = new Date(createAt.seconds * 1000);
     return(
         <View style={styles.viewLocacionTitle}>
             <View style={{ frexDirection: "row"}}>
-                <Text style={styles.nameLocacion}>{name}</Text>
+                <Text style={styles.nameLocacion}>Región: {region}</Text>
+                <Text style={styles.nameLocacion}>Comuna: {name}</Text>
                 <Rating 
                     style={styles.rating}
                     imageSize={20}
@@ -168,11 +179,19 @@ function TitleLocacion(props){
             </View>
             <Text style={styles.ppmInfo}>Medición PPM: {ppm}</Text>
             <Text style={styles.descriptionLocacion}>
-                {description}
+                Descripción: {description}
             </Text>
+            <Text style={styles.descriptionLocacion}>Fecha: {createReview.getDate()}/{createReview.getMonth() + 1}/
+                            {createReview.getFullYear()} - {createReview.getHours() < 10 ? "0" : ""}
+                            {createReview.getHours()}:{createReview.getMinutes() < 10 ? "0" : ""}
+                            {createReview.getMinutes()}
+            </Text>
+           
         </View>
     )
 };
+
+
 
 function LocacionInfo(props){
     const{ location, name, address } = props;
@@ -258,5 +277,13 @@ const styles = StyleSheet.create({
         borderRadius:100,
         padding:5,
         //paddingLeft:15,
+    },
+    reviewDate:{
+        marginTop:5,
+        color:"grey",
+        fontSize:12,
+        position:"absolute",
+        
+        bottom:0,
     },
 });

@@ -26,6 +26,7 @@ export default function AddLocacionesForm(props){
 
     const { toastRef, setIsLoading, navigation } = props;
     const [locacionName, setLocacionName] = useState("");
+    const [regionName, setRegionName] = useState("");
     const [locacionAdress, setLocacionAdress] = useState("");
     const [locacionDescripcion, setLocacionDescripcion] = useState("");
     const [ppmNumber, setPpmNumber] = useState("");
@@ -50,6 +51,7 @@ export default function AddLocacionesForm(props){
                 db.collection("Locaciones")
                 .add({
                     name:locacionName,
+                    region: regionName,
                     adress: locacionAdress,
                     description: locacionDescripcion,
                     ppm:ppmNumber,
@@ -105,6 +107,7 @@ export default function AddLocacionesForm(props){
             />
             <FormAdd 
                 setLocacionName={setLocacionName}
+                setRegionName={setRegionName}
                 setLocacionAdress={setLocacionAdress}
                 setLocacionDescripcion={setLocacionDescripcion}
                 setPpmNumber={setPpmNumber}
@@ -150,6 +153,7 @@ function FormAdd(props){
         navigation.navigate("locacion");
     };
     const { setLocacionName, 
+            setRegionName,
             setLocacionAdress, 
             setLocacionDescripcion, 
             setPpmNumber,
@@ -160,9 +164,14 @@ function FormAdd(props){
     return (
         <View style={styles.viewForm}>
             <Input 
-                placeholder="Nombre de la zona o locación"
+                placeholder="Comuna"
                 containerStyle={styles.input}
                 onChange={(e) => setLocacionName(e.nativeEvent.text)}
+            />
+            <Input 
+                placeholder="Región"
+                containerStyle={styles.input}
+                onChange={(e) => setRegionName(e.nativeEvent.text)}
             />
             <Input 
                 placeholder="Dirección aproximada"

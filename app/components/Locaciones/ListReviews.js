@@ -112,7 +112,6 @@ function Review(props){
                     startingValue={rating}
                     readonly
                 />
-                
                 <Text style={styles.reviewDate}>{createReview.getDate()}/{createReview.getMonth() + 1}/
                             {createReview.getFullYear()} - {createReview.getHours() < 10 ? "0" : ""}
                             {createReview.getHours()}:{createReview.getMinutes() < 10 ? "0" : ""}

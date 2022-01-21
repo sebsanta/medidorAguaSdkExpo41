@@ -48,8 +48,9 @@ function FooterList(props){
 
 function Locacion(props){
     const {locacion, navigation} = props;
-    const {id, images, name, adress, description, ppm } = locacion.item;
+    const {id, images, name, adress, description, ppm , region, createAt} = locacion.item;
     const imageLocacion = images[0];
+    const createReview = new Date(createAt.seconds * 1000);
 
     const goLocaciones = () => {
         navigation.navigate("locacion", {
@@ -71,10 +72,16 @@ function Locacion(props){
                     />
                 </View>
                 <View>
-                    <Text style={styles.locacionName}>{name}</Text>
-                    <Text style={styles.locacionAddress}>{adress}</Text>
-                    <Text style={styles.locacionDescription}>{description.substr(0, 40)}...</Text>
+                    <Text style={styles.locacionName}>Región: {region}</Text>
+                    <Text style={styles.locacionAddress}>Comuna: {name}</Text>
+                    <Text style={styles.locacionAddress}>Dirección: {adress.substr(0,29)}...</Text>
+                    <Text style={styles.locacionDescription}>Descripción: {description.substr(0, 25)}...</Text>
                     <Text style={styles.ppmInfo}>Medición PPM: {ppm}</Text>
+                    <Text style={styles.ppmInfo}>Fecha: {createReview.getDate()}/{createReview.getMonth() + 1}/
+                            {createReview.getFullYear()} - {createReview.getHours() < 10 ? "0" : ""}
+                            {createReview.getHours()}:{createReview.getMinutes() < 10 ? "0" : ""}
+                            {createReview.getMinutes()}
+                    </Text>
                 </View>
             </View>
         </TouchableOpacity>
@@ -95,8 +102,8 @@ const styles = StyleSheet.create({
         marginRight:15,
     },
     imageLocacion:{
-        width:80,
-        height:80,
+        width:90,
+        height:120,
     },  
     locacionName:{
         fontWeight:"bold",
