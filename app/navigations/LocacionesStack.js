@@ -1,5 +1,6 @@
 import React from "react";
-import {createStackNavigator} from "@react-navigation/stack";
+import { StyleSheet } from 'react-native'
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import Locaciones from "../screens/Locaciones/Locaciones";
 import AddLocacion from "../screens/Locaciones/AddLocacion";
 import Locacion from "../screens/Locaciones/Locacion";
@@ -7,16 +8,16 @@ import AddReviewLocacion from "../screens/Locaciones/AddReviewLocacion";
 import Favorites from "../../app/screens/Favorites";
 import Informacion from "../components/Informacion";
 
-
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export default function LocacionesStack(){
     return(
-        <Stack.Navigator>
+        <Stack.Navigator >
              <Stack.Screen 
-                name = "locaciones" 
-                component = {Locaciones} 
-                options={{title:"Locaciones "}}/>
+                component={Locaciones}
+                name = "Lista de Locaciones" 
+                options={{ title: "Locacioness", headerShown: false }} 
+            />
             <Stack.Screen 
                 name="add-locaciones"
                 component={AddLocacion}
@@ -41,8 +42,19 @@ export default function LocacionesStack(){
                     title:"informacion ",
                 }}
             />
-          
         </Stack.Navigator>
-        
     );
 }
+
+const styles = StyleSheet.create({
+    textoSuperior: {
+        color: "#EAEDED",
+        fontWeight: "bold",
+        backgroundColor: "red",
+    },
+    locaciones: {
+        color: "red",
+        fontWeight:"bold",
+        paddingBottom:10,
+    }
+})

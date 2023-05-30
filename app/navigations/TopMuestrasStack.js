@@ -7,7 +7,7 @@ const Stack = createStackNavigator();
 export default function TopMuestrasStack(){
     return(
         <Stack.Navigator>
-             <Stack.Screen name = "topmuestras" component = {TopMuestras} options={{title:"Top Muestras de agua "}}/>
+             <Stack.Screen name = "topmuestras" component = {TopMuestras} options={{title:"Top Muestras de agua ", headerShown: false}}/>
         </Stack.Navigator>
 
     );

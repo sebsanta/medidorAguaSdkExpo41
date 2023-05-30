@@ -25,8 +25,8 @@ const styles = StyleSheet.create({
     overlay: {
         height: 100, 
         width: 200,
-        backgroundColor: "#fff",
-        borderColor:"#4285F4",
+        backgroundColor: "#545963",
+        borderColor: "#707B7C",
         borderWidth:2,
         borderRadius:10,
     },
@@ -36,8 +36,9 @@ const styles = StyleSheet.create({
         justifyContent:"center",
     },
     text: {
-        color:"#4285F4",
+        color: "#E4E8F0",
         textTransform:"uppercase",
         marginTop:10,
+        fontWeight: "bold",
     },
 });

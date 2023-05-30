@@ -1,5 +1,5 @@
 import React, { useState, useEffect , useRef } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import { AirbnbRating, Button, Input } from "react-native-elements";
 import { LogBox } from 'react-native';
 import Toast from "react-native-easy-toast";
@@ -88,6 +88,7 @@ export default function AddReviewLocacion(props) {
     //console.log(idLocacion);
 
     return (
+        <ScrollView style={styles.ScrollView}>
         <View style={styles.viewBody}>
             <Text style={styles.textoPuntuacion}>Ingresa una puntuación</Text>
             <View style={styles.viewRating}>
@@ -110,13 +111,7 @@ export default function AddReviewLocacion(props) {
                     keyboardType="numeric"
                     placeholder="Ingrese los PPM"
                     containerStyle={styles.input}
-                    onChange={(e)=> setPpmNumber(e.nativeEvent.text)}
-                    rightIcon={{
-                        type:"material-community",
-                        name:"google-maps",
-                        color: locationLoc ? "#00a680" : "grey",
-                        onPress:() => setIsVisibleMap(true),
-                    }}
+                        onChange={(e) => setPpmNumber(e.nativeEvent.text)}
                 />
                 <Input 
                     placeholder="Agrega un título"
@@ -148,12 +143,16 @@ export default function AddReviewLocacion(props) {
                     text="Enviando comentario"
             />
         </View>
+        </ScrollView>
     );
 }
 
 
 
 const styles = StyleSheet.create({
+    ScrollView: {
+        height: "100%",
+    },
     viewBody:{
         flex:1,
     },  

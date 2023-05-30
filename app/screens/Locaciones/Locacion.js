@@ -122,7 +122,7 @@ export default function Locacion(props) {
     return (
         <ScrollView vertical style={styles.viewBody}>
             <View style={styles.viewFavorite}>
-                <Icon 
+                {/*}   <Icon
                     type="material-community"
                     name={isFavorite ? "heart" : "heart-outline"}
                     onPress={isFavorite ? removeFavorites : addFavorites}
@@ -130,6 +130,7 @@ export default function Locacion(props) {
                     size={35}
                     underlayColor="transparent"
                 />
+    */}
             </View>
            <CarouselImages 
                 arrayImages={locacion.images}

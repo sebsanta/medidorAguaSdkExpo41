@@ -24,7 +24,7 @@ export default function Informacion() {
                     color="#7a7a7a"
                     size={30}
                 />
-                <Text style={styles.description}>Sales solubles tales como iones de Calcio y Magnesio.</Text>
+                <Text style={styles.description}>Sales solubles tales como: iones de Calcio y Magnesio.</Text>
             </View>
             <View style={styles.viewText}>
                 <Icon
@@ -34,7 +34,7 @@ export default function Informacion() {
                     color="#7a7a7a"
                     size={30}
                 />
-                <Text style={styles.description}>Iones de metales pesados tales como Zinc, Cromo, Plomo y Cobre.</Text>
+                <Text style={styles.description}>Iones de metales pesados tales como: Zinc, Cromo, Plomo y Cobre.</Text>
             </View>
             <View style={styles.viewText}>
                 <Icon

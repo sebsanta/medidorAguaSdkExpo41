@@ -18,3 +18,7 @@ webcliente 2 android = 483811688154-6i51ian541c4ms8ifttl8suevtufvo9a.apps.google
 
 web cliente: 483811688154-fnh954qu8ipikvnmtcbk7ilrlsfaknhv.apps.googleusercontent.com
 web secreto cliente : 8B4_rCeasFEFH_Ksq7-bRE9K
+
+
+expo install react-native-screens 
+expo install react-native-safe-area-context

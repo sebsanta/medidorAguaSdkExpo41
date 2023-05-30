@@ -18,21 +18,20 @@ export default function Navigation() {
     return(
         <NavigationContainer>
             <Tab.Navigator 
-            initialRouteName="locaciones" 
+      /*      initialRouteName="locaciones" 
             tabBarOptions={{
-                inactiveTintColor:"#646464",
-                activeTintColor:"#00a680",
-            }}
+                inactiveTintColor: "#ABB2B9",
+                activeTintColor: "#095A8C",
+            }} */
             screenOptions={({route}) => ({
                 tabBarIcon: ({color}) => screenOptions(route, color),
             })}
                 >
                 <Tab.Screen name = "locaciones" component={LocacionesStack} options = {{title: "Locaciones"}}/>
-                <Tab.Screen name = "favoritos" component ={FavoritesStack} options = {{title: "Favoritos"}}/>
+                {/*<Tab.Screen name = "favoritos" component ={FavoritesStack} options = {{title: "Favoritos"}}/>*/}
                 <Tab.Screen name = "topmuestras" component = {TopMuestrasStack} options = {{title: "Top Muestras"}}/>
                 <Tab.Screen name = "search" component = {SearchStack} options = {{title: "Buscar"}}/>
                 <Tab.Screen name = "account" component = {AccountStack} options = {{title: "Cuenta"}}/>
-               
             </Tab.Navigator>
         </NavigationContainer>
     );
@@ -44,28 +43,23 @@ function screenOptions(route, color){
         case "locaciones":
             iconName = "compass-outline"
             break;
-        
         case "favoritos":
             iconName = "heart-outline"
             break;    
-
         case "topmuestras":
             iconName = "star-outline"
             break;  
-
         case "search":
             iconName = "magnify"
             break;  
-
         case "account":
             iconName = "home-outline"
             break;        
-
         default:
             break;
     }
     return(
-        <Icon type="material-community" name={iconName} size={22} color={color} />
+        <Icon type="material-community" name={iconName} size={35} color={color} />
     )
 }
 

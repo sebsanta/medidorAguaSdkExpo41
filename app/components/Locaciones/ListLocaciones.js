@@ -59,7 +59,7 @@ function Locacion(props){
         });
     };
     return (
-        <TouchableOpacity onPress={goLocaciones}>
+        <TouchableOpacity onPress={goLocaciones} style={styles.contenedor}>
             <View style={styles.viewLocaciones}>
                 <View style={styles.viewLocacionesImage}>
                 <Image 
@@ -75,7 +75,7 @@ function Locacion(props){
                     <Text style={styles.locacionName}>Región: {region}</Text>
                     <Text style={styles.locacionAddress}>Comuna: {name}</Text>
                     <Text style={styles.locacionAddress}>Dirección: {adress.substr(0,29)}...</Text>
-                    <Text style={styles.locacionDescription}>Descripción: {description.substr(0, 25)}...</Text>
+                    <Text style={styles.locacionDescription}>Descripción: {description.substr(0, 23)}...</Text>
                     <Text style={styles.ppmInfo}>Medición PPM: {ppm}</Text>
                     <Text style={styles.ppmInfo}>Fecha: {createReview.getDate()}/{createReview.getMonth() + 1}/
                             {createReview.getFullYear()} - {createReview.getHours() < 10 ? "0" : ""}
@@ -97,6 +97,8 @@ const styles = StyleSheet.create({
     viewLocaciones:{
         flexDirection:"row",
         margin:10,
+        backgroundColor: "#566573",
+        borderRadius: 15,
     },
     viewLocacionesImage:{
         marginRight:15,
@@ -107,18 +109,20 @@ const styles = StyleSheet.create({
     },  
     locacionName:{
         fontWeight:"bold",
+        color: "#EAEDED",
     },
     ppmInfo:{
         paddingTop:2,
         color:"grey",
+        color: "#EAEDED",
     },
     locacionAddress:{
         paddingTop:2,
-        color:"grey",
+        color: "#EAEDED",
     },
     locacionDescription:{
         paddingTop:2,
-        color:"grey",
+        color: "#EAEDED",
         width:300,
     },
     notFoundLocaciones:{
@@ -126,6 +130,9 @@ const styles = StyleSheet.create({
         marginBottom:20,
         alignItems:"center",
     },
+    contenedor: {
+        backgroundColor: "#ABB2B9",
+    }
 });
 
 

@@ -34,7 +34,7 @@ useEffect(() => {
 }, []);
 
 return (
-    <TouchableOpacity onPress={() => navigation.navigate("locaciones", {screen : "locacion", params:{id}})}>
+    <TouchableOpacity style={styles.contenedor} onPress={() => navigation.navigate("locaciones", { screen: "locacion", params: { id } })}>
         <Card containerStyle={styles.containerCard}>
             <Icon 
                 type="material-community"
@@ -68,15 +68,20 @@ return (
 }
 
 const styles = StyleSheet.create({
+    contenedor: {
+        backgroundColor: "#ABB2B9",
+    },
     containerCard:{
         marginBottom:30,
         borderWidth:0,
+
     },
     containerIcon:{
         position:"absolute",
         top:0,
         left:0,
         zIndex:1,
+
     },
     locacionImage:{
         width:"100%",
@@ -86,6 +91,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         marginTop: 10,
+
     },
     title:{
         fontSize:20,

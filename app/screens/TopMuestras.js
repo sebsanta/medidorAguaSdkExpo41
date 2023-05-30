@@ -23,7 +23,7 @@ const toastRef = useRef();
 useFocusEffect(
     useCallback(() => {
     db.collection("Locaciones")
-    .orderBy("rating", "desc")
+        .orderBy("ppm", "asc")
     .limit(5)
     .get()
     .then((response) => {
